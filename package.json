@@ -1,7 +1,7 @@
 {
-  "name": "@yanshoof/starter",
+  "name": "@yanshoof/settings",
   "version": "0.1.0",
-  "description": "A starter package for npm with typescript, jest and eslint",
+  "description": "A Class Library for managing and encapsulating settings",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -12,18 +12,24 @@
     "test:watch": "jest --watch",
     "build": "tsc",
     "lint": "eslint . --ext .ts",
-    "format": "eslint . --ext .ts --fix"
+    "format": "eslint . --ext .ts --fix",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yanshoof-app/starter.git"
+    "url": "git+https://github.com/yanshoof-app/settings.git"
   },
   "author": "Yanshoof app <yanshoof.app@gmail.com>",
+  "keywords": ["Object Oriented", "TypeScript", "Timetable"],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yanshoof-app/starter/issues"
+    "url": "https://github.com/yanshoof-app/settings/issues"
   },
-  "homepage": "https://github.com/yanshoof-app/starter#readme",
+  "homepage": "https://github.com/yanshoof-app/settings#readme",
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
