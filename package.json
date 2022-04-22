@@ -24,7 +24,11 @@
     "url": "git+https://github.com/yanshoof-app/settings.git"
   },
   "author": "Yanshoof app <yanshoof.app@gmail.com>",
-  "keywords": ["Object Oriented", "TypeScript", "Timetable"],
+  "keywords": [
+    "Object Oriented",
+    "TypeScript",
+    "Timetable"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yanshoof-app/settings/issues"
@@ -34,6 +38,7 @@
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
+    "@yanshoof/types": "^1.1.1",
     "eslint": "^8.14.0",
     "jest": "^27.5.1",
     "prettier": "^2.6.2",
