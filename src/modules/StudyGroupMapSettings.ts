@@ -1,20 +1,6 @@
 import { DayOfWeek, HourOfDay, IStudyGroup } from '@yanshoof/types';
+import { IScheduleSettings } from '../interfaces/IScheduleSettings';
 import { Settings } from './Settings';
-
-export interface IScheduleSettings {
-  /**
-   * An array of [subject, teacher] tuples
-   */
-  studyGroups: [string, string][];
-  /**
-   * A map from `day,hour` strings to indexes in the latter array
-   */
-  studyGroupMap: Map<string, number>;
-  /**
-   * Determines if changes of others should be shown
-   */
-  showOthersChanges: boolean;
-}
 
 /** Represents settings implemented with a study group and a study group map technique
  * @author Itay Schechner
