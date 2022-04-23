@@ -1,6 +1,11 @@
 import { DayOfWeek, HourOfDay, IStudyGroup } from '@yanshoof/types';
 import { ISettings, ProblemArray } from '../interfaces/ISettings';
 
+/**
+ * Represents a settings object
+ * @author Itay Schechner
+ * @version 1.0.0
+ */
 export abstract class Settings<TLesson, TChange> implements ISettings<TLesson, TChange> {
   readonly problems: ProblemArray;
   public showOthersChanges: boolean;
