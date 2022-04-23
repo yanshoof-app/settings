@@ -41,4 +41,32 @@ export abstract class StudyGroupMapSettings<TLesson, TChange>
     const [subject, teacher] = this.studyGroups[sgIndex];
     return { subject, teacher };
   }
+
+  public repair(): boolean {
+    let override = false;
+    const studyGroupMapValues = new Set(this.studyGroupMap.values());
+    // do not change problematic settings
+    if (this.problems.length) return;
+
+    for (let i = 0; i < this.studyGroups.length; i++) {
+      //detect unused study group
+      if (studyGroupMapValues.has(i)) continue;
+
+      // unused study group detected, create overrides
+      override = true;
+
+      //remove the unused study group
+      this.studyGroups.splice(i, 1);
+
+      //update indexes in studyGroupMap
+      for (const key of this.studyGroupMap.keys()) {
+        const value = this.studyGroupMap.get(key);
+        if (value > i) {
+          this.studyGroupMap.set(key, value - 1);
+        }
+      }
+    }
+
+    return override;
+  }
 }

@@ -44,7 +44,11 @@ export abstract class Settings<TLesson, TChange> implements ISettings<TLesson, T
    */
   protected abstract mapChangeToStudyGroup(change: TChange): IStudyGroup;
 
-  public abstract repair(): void;
+  /**
+   * Trigger to repair problematic settings
+   * @returns true if settings were overriden
+   */
+  public abstract repair(): boolean;
 
   selectLesson(day: DayOfWeek, hour: HourOfDay, schedule: TLesson[]): TLesson {
     if (!this.hasSetting(day, hour)) {
