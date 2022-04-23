@@ -1,11 +1,11 @@
-import { DayOfWeek, HourOfDay } from '@yanshoof/types';
+import { DayOfWeek, HourOfDay, IStudyGroup } from '@yanshoof/types';
 
 export type ProblemArray = [DayOfWeek, HourOfDay][];
 
 /**
  * Represents a settings object
  */
-export interface ISettings<TLesson, TChange> {
+export interface ISettings<TLesson> {
   problems: ProblemArray;
   showOthersChanges: boolean;
 
@@ -22,10 +22,10 @@ export interface ISettings<TLesson, TChange> {
    * Checks if a change is relevant to one's study groups
    * @param day the day the change takes place in
    * @param hour the hour the change takes place in
-   * @param change the change to check
+   * @param studyGroup the study group to check
    * @returns true if relevant, false otherwise
    */
-  isOwnChange(day: DayOfWeek, hour: HourOfDay, change: TChange): boolean;
+  isOwnStudyGroup(day: DayOfWeek, hour: HourOfDay, studyGroup: IStudyGroup): boolean;
 
   /**
    * Repair settings

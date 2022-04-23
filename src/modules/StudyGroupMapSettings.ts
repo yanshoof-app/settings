@@ -6,10 +6,7 @@ import { Settings } from './Settings';
  * @author Itay Schechner
  * @version 1.0.0
  */
-export abstract class StudyGroupMapSettings<TLesson, TChange>
-  extends Settings<TLesson, TChange>
-  implements IScheduleSettings
-{
+export abstract class StudyGroupMapSettings<TLesson> extends Settings<TLesson> implements IScheduleSettings {
   readonly studyGroups: [string, string][];
   readonly studyGroupMap: Map<string, number>;
 

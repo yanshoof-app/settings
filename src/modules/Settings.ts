@@ -6,7 +6,7 @@ import { ISettings, ProblemArray } from '../interfaces/ISettings';
  * @author Itay Schechner
  * @version 1.0.0
  */
-export abstract class Settings<TLesson, TChange> implements ISettings<TLesson, TChange> {
+export abstract class Settings<TLesson> implements ISettings<TLesson> {
   readonly problems: ProblemArray;
   public showOthersChanges: boolean;
 
@@ -37,12 +37,6 @@ export abstract class Settings<TLesson, TChange> implements ISettings<TLesson, T
    * @param lesson the lesson to map
    */
   protected abstract mapLessonToStudyGroup(lesson: TLesson): IStudyGroup;
-
-  /**
-   * Rerieve a change's study group
-   * @param change the change to map
-   */
-  protected abstract mapChangeToStudyGroup(change: TChange): IStudyGroup;
 
   /**
    * Trigger to repair problematic settings
@@ -79,10 +73,10 @@ export abstract class Settings<TLesson, TChange> implements ISettings<TLesson, T
     return selectedLesson;
   }
 
-  isOwnChange(day: DayOfWeek, hour: HourOfDay, change: TChange): boolean {
+  isOwnStudyGroup(day: DayOfWeek, hour: HourOfDay, studyGroup: IStudyGroup): boolean {
     try {
       const setting = this.getSetting(day, hour);
-      const { subject, teacher } = this.mapChangeToStudyGroup(change);
+      const { subject, teacher } = studyGroup;
       return subject == setting.subject && teacher == setting.teacher;
     } catch (err) {
       // no setting for hour

@@ -1,10 +1,10 @@
-import { IChange, ILesson } from '@yanshoof/types';
+import { ILesson } from '@yanshoof/types';
 import { Settings } from '../src';
 import { ENGLISH_LESSONS, SETTINGS } from '../src/test_utils/sample_constants';
 import { TestSettings } from '../src/test_utils/TestSettings';
 
 describe('Tests the settings module', () => {
-  let settings: Settings<ILesson, IChange>;
+  let settings: Settings<ILesson>;
 
   beforeEach(() => {
     settings = new TestSettings(SETTINGS); // remove problems
