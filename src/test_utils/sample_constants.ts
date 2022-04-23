@@ -1,4 +1,4 @@
-import { ILesson } from '@yanshoof/types';
+import { IChange, ILesson, LessonModification } from '@yanshoof/types';
 import { IScheduleSettings } from '..';
 
 export const AMI_ASSAF_SYMBOL = '460030';
@@ -61,6 +61,22 @@ export const ENGLISH_LESSONS: ILesson[] = [
     class: 'חדר י 7',
   },
 ];
+
+export const ENGLISH_CANCELLATION: IChange = {
+  day: 1,
+  hour: 4,
+  subject: 'אנגלית 5',
+  teacher: 'ורגוליס ארתור',
+  modification: LessonModification.Canceled,
+};
+
+export const OTHERS_ENGLISH_CHANGE: IChange = {
+  day: 1,
+  hour: 4,
+  subject: 'אנגלית 5',
+  teacher: 'שוורץ יעל',
+  modification: LessonModification.Canceled,
+};
 
 export const SETTINGS: IScheduleSettings = {
   showOthersChanges: true,
