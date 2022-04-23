@@ -7,6 +7,7 @@ export type ProblemArray = [DayOfWeek, HourOfDay][];
  */
 export interface ISettings<TLesson, TChange> {
   problems: ProblemArray;
+  showOthersChanges: boolean;
 
   /**
    * Picks a lesson out of a list
@@ -25,4 +26,9 @@ export interface ISettings<TLesson, TChange> {
    * @returns true if relevant, false otherwise
    */
   isOwnChange(day: DayOfWeek, hour: HourOfDay, change: TChange): boolean;
+
+  /**
+   * Repair settings
+   */
+  repair(): void;
 }
