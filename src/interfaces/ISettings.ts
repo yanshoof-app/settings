@@ -14,9 +14,9 @@ export interface ISettings<TLesson> {
    * @param day the day the lesson takes place in
    * @param hour the hour the lesson takes place in
    * @param schedule the lessons to choose from
-   * @returns the lesson chosen
+   * @returns the lesson chosen, undefined if window at current hour
    */
-  selectLesson(day: DayOfWeek, hour: HourOfDay, schedule: TLesson[]): TLesson;
+  selectLesson(day: DayOfWeek, hour: HourOfDay, schedule: TLesson[]): TLesson | undefined;
 
   /**
    * Checks if a change is relevant to one's study groups
