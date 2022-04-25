@@ -26,4 +26,8 @@ describe('Tests the settings module', () => {
     expect(settings.problems.length).toBe(1);
     expect(settings.problems[0]).toStrictEqual([2, 10]);
   });
+
+  it('Picks a window', () => {
+    expect(settings.selectLesson(1, 7, ENGLISH_LESSONS)).toBe(undefined);
+  });
 });

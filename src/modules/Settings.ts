@@ -55,7 +55,7 @@ export abstract class Settings<TLesson> implements ISettings<TLesson> {
     const setting = this.getSetting(day, hour);
     if (!setting) {
       // set to window
-      return {} as TLesson;
+      return undefined;
     }
 
     // setting has actual study group
