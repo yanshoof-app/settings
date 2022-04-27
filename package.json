@@ -1,6 +1,6 @@
 {
   "name": "@yanshoof/settings",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A Class Library for managing and encapsulating settings",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
