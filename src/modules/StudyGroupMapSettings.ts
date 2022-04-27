@@ -26,7 +26,7 @@ export abstract class StudyGroupMapSettings<TLesson> extends Settings<TLesson> i
     return `${day},${hour}`;
   }
 
-  protected hasSetting(day: DayOfWeek, hour: HourOfDay): boolean {
+  public hasSetting(day: DayOfWeek, hour: HourOfDay): boolean {
     return this.studyGroupMap.has(this.getKey(day, hour));
   }
 
