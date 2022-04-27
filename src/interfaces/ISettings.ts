@@ -28,6 +28,14 @@ export interface ISettings<TLesson> {
   isOwnStudyGroup(day: DayOfWeek, hour: HourOfDay, studyGroup: IStudyGroup): boolean;
 
   /**
+   * Checks if there is a setting to certain hour in the timetable
+   * @param day the day of the lesson
+   * @param hour the hour of the lesson
+   * @returns true if setting exists, false otherwise
+   */
+  hasSetting(day: DayOfWeek, hour: HourOfDay): boolean;
+
+  /**
    * Repair settings
    */
   repair(): void;
