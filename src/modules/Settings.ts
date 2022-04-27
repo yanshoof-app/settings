@@ -15,13 +15,7 @@ export abstract class Settings<TLesson> implements ISettings<TLesson> {
     this.showOthersChanges = showOthersChanges;
   }
 
-  /**
-   * Checks if there is a setting to certain hour in the timetable
-   * @param day the day of the lesson
-   * @param hour the hour of the lesson
-   * @returns true if setting exists, false otherwise
-   */
-  protected abstract hasSetting(day: DayOfWeek, hour: HourOfDay): boolean;
+  public abstract hasSetting(day: DayOfWeek, hour: HourOfDay): boolean;
 
   /**
    * Retrieves a setting
